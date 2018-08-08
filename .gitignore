@@ -1,0 +1,7 @@
+# ignore all logs
+*.log
+# Ignore all logfiles and tempfiles.
+/tmp/*
+/.idea/*
+/log/*
+!/log/.keep
