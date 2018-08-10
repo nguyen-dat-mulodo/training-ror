@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    # categories = Category.get_category
     @product = Product.new
   end
 
@@ -64,7 +65,9 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
+      @categories = Category.get_category
       @product = Product.find(params[:id])
+      return @product
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
