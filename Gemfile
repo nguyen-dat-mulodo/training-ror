@@ -37,6 +37,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use bootstrap for rails
 gem 'bootstrap-sass'
 
+#Use gem for upload image
+gem 'paperclip'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
