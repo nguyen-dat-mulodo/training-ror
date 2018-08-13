@@ -43,6 +43,8 @@ gem 'capybara'
 gem "factory_girl_rails"
 #Call it for test template
 gem 'rails-controller-testing'
+#Call method for view test
+gem 'rspec-activemodel-mocks'
 #Use gem for upload image
 gem 'paperclip'
 
