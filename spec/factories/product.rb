@@ -6,7 +6,7 @@ FactoryGirl.define do
     f.title {Faker::Book.title}
     f.description {Faker::WorldOfWarcraft.quote}
     f.image_url "/images/2.jpg"
-    f.price {Faker::Number.digit}
+    f.price {Faker::Number.non_zero_digit}
   end
 
   factory :invalid_product, parent: :product do |f|
