@@ -1,5 +1,5 @@
 class Manager::CategoriesController < ApplicationController
-  # before_filter :authorize
+  before_filter :authorize
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories

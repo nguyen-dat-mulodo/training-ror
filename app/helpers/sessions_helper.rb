@@ -5,6 +5,7 @@ module SessionsHelper
 
   def log_out
     session.delete :user
+    session.delete :return
   end
 
 end

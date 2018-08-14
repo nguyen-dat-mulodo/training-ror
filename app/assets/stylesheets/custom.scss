@@ -14,3 +14,18 @@ a:hover {
 #new-category {
   display: none;
 }
+.menu-login{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 25%;
+  background-color: whitesmoke;
+  //height: 100vh;
+  height: 400px;
+  z-index: 99999;
+}
+.cart-item{
+  top: 20%;
+  position: absolute;
+  left: 0;
+}

@@ -13,8 +13,12 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
+      <div class="col-sm-3 menu-login">
+        <%= render 'sessions/login'%>
+      </div>
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+    <%= javascript_include_tag "custom", 'data-turbolinks-track' => "reload" %>
   </body>
 </html>

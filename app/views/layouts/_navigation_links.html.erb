@@ -4,9 +4,14 @@
 <li><%= link_to 'Category', manager_categories_path %></li>
 <li><%= link_to 'Product', products_path %></li>
 <% if session[:user].nil? %>
-  <li><%= link_to 'Login', login_path %></li>
+<!--  <li><%#= link_to 'Login', login_path %></li>-->
+  <li><%= link_to 'Login', "javascript:;", :class => "form-login" %></li>
 <% else %>
   <li><%= link_to "Hello, #{session[:user]['name']}", 'javascript:;' %></li>
   <li><%= link_to 'Logout', logout_path, method: 'delete' %></li>
 <% end %>
+<!-- TODO: fix error line_items is nil if redirect to other page -->
+<%# unless @cart.line_items.empty? %>
+<!--  <li><%#= link_to 'Cart', "javascript:;", :class => "form-cart" %></li>-->
+<%# end %>
 <li><%= link_to 'Register', new_user_path %></li>

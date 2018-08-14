@@ -2,21 +2,23 @@
   My Homepage
 <% end %>
 
-<div class="page-header">
-  <h1>List product</h1>
-</div>
-
 <div class="container-fluid">
-  <div class="col-sm-12 coll-offset-2 list-item">
+  <div  id="cart" class="col-sm-2 cart-item">
+    <%= render @cart %>
+  </div>
+  <div class="col-sm-10 col-sm-offset-2 list-item">
+    <div class="page-header">
+      <legend>List product</legend>
+    </div>
     <% @products.each do |product| %>
-      <div class="item">
+      <div class="col-sm-4 item">
         <%= image_tag(product.image_url) %>
         <h3><%= product.title %></h3>
         <%= sanitize(product.description) %>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price)%></span>
         </div>
-        <%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
+        <%= button_to 'Add to Cart', line_items_path(:product_id => product), :remote => true %>
       </div>
     <% end %>
   </div>
