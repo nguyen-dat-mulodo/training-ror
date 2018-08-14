@@ -45,6 +45,7 @@ gem "factory_girl_rails"
 gem 'rails-controller-testing'
 #Call method for view test
 gem 'rspec-activemodel-mocks'
+gem 'formulaic'
 #Use gem for upload image
 gem 'paperclip'
 
