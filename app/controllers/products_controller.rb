@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
   before_filter :authorize, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :get_category, only: [:new, :edit, :create, :update]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.group(:category_id, :id).order("category_id desc")
   end
 
   # GET /products/1
@@ -15,13 +16,11 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @categories = Category.get_category
     @product = Product.new
   end
 
   # GET /products/1/edit
   def edit
-    @categories = Category.get_category
   end
 
   # POST /products
@@ -31,8 +30,8 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
+        format.html { redirect_to products_path, notice: 'Product was successfully created.' }
+        format.json { render :show, status: :created, location: products_path }
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -72,6 +71,11 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price, :category_id)
+      params.require(:product).permit(:title, :description, :image, :price, :category_id)
+    end
+
+    # Use call list category for drop down
+    def get_category
+      @categories = Category.get_category
     end
 end

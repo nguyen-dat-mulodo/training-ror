@@ -1,6 +1,6 @@
 class Manager::CategoriesController < ApplicationController
   before_filter :authorize
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show, :update, :destroy]
 
   # GET /categories
   # GET /categories.json
@@ -21,6 +21,7 @@ class Manager::CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+    @category_update = Category.find(params[:id])
   end
 
   # POST /categories
@@ -45,8 +46,8 @@ class Manager::CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
-        format.js {}
+        # format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.js {edit}
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit }
@@ -60,7 +61,7 @@ class Manager::CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to manager_categories_url, notice: 'Category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

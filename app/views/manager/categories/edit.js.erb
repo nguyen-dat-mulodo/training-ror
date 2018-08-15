@@ -1,0 +1,4 @@
+//add a record created to table
+
+//$("#update-category").append("<%= j render 'manager/categories/category_update' %>")
+$("#update-category").html("<%= escape_javascript(render(:partial => @category_update)) %>");

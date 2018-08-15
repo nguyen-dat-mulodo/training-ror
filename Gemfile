@@ -48,6 +48,8 @@ gem 'rspec-activemodel-mocks'
 gem 'formulaic'
 #Use gem for upload image
 gem 'paperclip'
+#Use gem slim for template
+gem 'slim-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

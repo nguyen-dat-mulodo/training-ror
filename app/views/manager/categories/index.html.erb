@@ -42,6 +42,7 @@
       </div>
     <% end %>
   </div>
+
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
@@ -58,20 +59,17 @@
     </tbody>
   </table>
 </div>
-
+<div id="update-category" class="col-sm-12 col-offset-2">
+  <% unless @category_update.nil? %>
+    <%= render @category_update %>
+  <% end %>
+</div>
 <script>
   $('.add-category').click(function(){
     $('#new-category').toggle(1000);
   });
   $('.update-cat').click(function () {
-    $(this).closest('tr').find('td:nth-child(2)').each(function () {
-        // console.log('wwwwwwwww');
-        var val = $(this).html();
-        console.log(val);
-        // var input = ("<input type='text' name");
-        // input.val(val);
-        // $(this).html(input);
-    });
+    // $('#update-category').toggle(1000);
   });
 <!--  $("form").submit(function(){-->
 <!--      let description = $(this).find('#todo_description').val();-->

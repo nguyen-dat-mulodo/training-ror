@@ -1,0 +1,23 @@
+<%#= form_for(category_update, url: manager_categories_path, html: { class: "form-horizontal", role: "form" }, remote: true) do |f| %>
+<!--  <div class="form-group">-->
+    <%#= f.label :category_name, class: "col-sm-2 control-label" %>
+<!--    <div class="col-sm-10">-->
+      <%#= f.text_field :cat_name, class: "form-control" %>
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+    <%#= f.label :category_content, class: "col-sm-2 control-label" %>
+<!--    <div class="col-sm-10">-->
+      <%#= f.text_area :cat_content, class: "form-control" %>
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <div class="col-sm-offset-2 col-sm-10">-->
+      <%#= f.submit class: "btn btn-primary" %>
+<!--    </div>-->
+<!--  </div>-->
+<%# end %>
+<tr id="<%= @category_update.cat_id %>">
+  <td><%= @category_update.cat_name %></td>
+  <td><%= @category_update.cat_content %></td>
+</tr>

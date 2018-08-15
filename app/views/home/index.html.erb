@@ -7,9 +7,7 @@
     <%= render @cart %>
   </div>
   <div class="col-sm-10 col-sm-offset-2 list-item">
-    <div class="page-header">
-      <legend>List product</legend>
-    </div>
+    <legend>List product</legend>
     <% @products.each do |product| %>
       <div class="col-sm-4 item">
         <%= image_tag(product.image_url) %>
